@@ -13,3 +13,24 @@
   --font-subhead: var(--font-pjs);
   --font-nav: var(--font-dms);
 }
+
+/* .finora-logo{
+ 
+  transition: text-shadow 300ms ease;
+}
+
+.finora-logo:hover{
+  text-shadow: 0 0 12px rgba(139,92,246,0.5);
+} */
+
+.finora-logo {
+  transition: text-shadow 150ms ease;
+}
+
+.finora-logo:hover {
+  text-shadow: 
+    0 0 5px rgba(147, 51, 234, 1),
+    0 0 15px rgba(147, 51, 234, 0.8),
+    0 0 30px rgba(139, 92, 246, 0.6),
+    0 0 45px rgba(124, 58, 237, 0.4);
+}
