@@ -14,15 +14,6 @@
   --font-nav: var(--font-dms);
 }
 
-/* .finora-logo{
- 
-  transition: text-shadow 300ms ease;
-}
-
-.finora-logo:hover{
-  text-shadow: 0 0 12px rgba(139,92,246,0.5);
-} */
-
 .finora-logo {
   transition: text-shadow 150ms ease;
 }
@@ -33,4 +24,57 @@
     0 0 15px rgba(147, 51, 234, 0.8),
     0 0 30px rgba(139, 92, 246, 0.6),
     0 0 45px rgba(124, 58, 237, 0.4);
+}
+
+@keyframes orb-float{
+  0%, 100%{
+    transform:translate(0) rotateY(0deg);
+  }
+  50%{
+    transform: translateY(-12px) rotate(12deg);
+  }
+}
+
+.animate-orb-float{
+  animation: orb-float 5s ease-in-out infinite;
+}
+
+@keyframes orb-ring{
+  from{
+    transform: rotate(-20deg);
+  }
+  to{
+    transform: rotate(340deg);
+  }
+}
+
+.animate-orb-ring{
+  animation: orb-ring 9s linear infinite;
+}
+
+@keyframes orb-ring2{
+  from{
+    transform: rotate(55deg);
+  }
+  to{
+    transform: rotate(415deg);
+  }
+}
+
+.animate-orb-ring2{
+  animation: orb-ring2 12s linear infinite;
+}
+
+@keyframes orb-drift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, -17px);
+  }
+}
+
+.animate-orb-drift {
+  animation: orb-drift 4s ease-in-out infinite;
 }

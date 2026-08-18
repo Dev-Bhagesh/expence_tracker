@@ -1,9 +1,13 @@
+import Dashboardhead from "../components/DashboardHead"
+import Balance from "../components/Balance"
 export default function DashboardPage(){
     return(
         <main>
-            <div>
-            Finora Dashboard
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, tenetur quasi voluptas suscipit voluptatibus maiores fugiat unde vel? Fuga velit aliquid ad? Suscipit nisi quaerat officiis possimus, dolores repellendus quibusdam.
+            <div className="p-5">
+                <div className="mb-10">
+                <Dashboardhead/>
+                </div>
+                <Balance/>
             </div>
         </main>
     )
