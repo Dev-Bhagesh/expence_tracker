@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 
 const Balance = () => {
@@ -8,10 +9,10 @@ const Balance = () => {
             shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex justify-around min-h-[255px] items-center relative overflow-hidden">
                 <div className="subBlock1 flex-1">
                     <span className="font-subhead text-sm">Available balance</span>
-                    <p className="font-hero font-bold text-[60px]">16,500</p>
+                    <p className="font-hero font-bold text-[60px]">₹ 16,500</p>
                     <div className="buttons flex mt-1.5 gap-2 text-sm">
-                        <button className="font-bold expence text-xs w-30 border bg-[#7c3aed] cursor-pointer border-[#8b5cf6] px-[10px] py-[10px] transition-all duration-200 hover:translate-y-[-1.5px] hover:bg-white/[0.05] rounded-[10px]">Add expence</button>
-                        <button className="cursor-pointer transition-all duration-200 hover:translate-y-[-1.5px] income w-30 px-[10px] py-[10px] text-xs rounded-[10px] border border-white/[0.07] bg-white/[0.02] hover:bg-white/[0.05] text-slate-300">Add income</button>
+                        <button onClick={()=>alert("Add expence clicked")} className="font-bold expence text-xs w-30 border bg-[#7c3aed] cursor-pointer border-[#8b5cf6] px-[10px] py-[10px] transition-all duration-200 hover:translate-y-[-1.5px] hover:bg-white/[0.05] rounded-[10px]">Add expence</button>
+                        <button onClick={()=>alert("Add income")} className="cursor-pointer transition-all duration-200 hover:translate-y-[-1.5px] income w-30 px-[10px] py-[10px] text-xs rounded-[10px] border border-white/[0.07] bg-white/[0.02] hover:bg-white/[0.05] text-slate-300">Add income</button>
                     </div>
                 </div>
                 <div className="subBlock2 pointer-events-none flex-1 z-[-1] absolute right-[-70px] top-[20px] opacity-50 md:relative md:right-auto md:top-auto md:opacity-100">

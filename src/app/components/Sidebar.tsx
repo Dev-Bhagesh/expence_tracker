@@ -50,7 +50,7 @@ const Sidebar = () => {
     ]
     return (
         <>
-            <button onClick={() =>{console.log("the hamburger button is clicked") ,alert("The button is clicked"), setIsMenuOpen(true)}} className={` bg-[rgba(67,20,148,0.9)] cursor-pointer rounded p-0.5 fixed bottom-5 left-5 z-[999] md:hidden ${isMenuOpen ? "hidden" : ""}`}>
+            <button onClick={() =>{console.log("the hamburger button is clicked"), setIsMenuOpen(true)}} className={` bg-[rgba(67,20,148,0.9)] cursor-pointer rounded p-0.5 fixed bottom-5 left-5 z-[999] md:hidden ${isMenuOpen ? "hidden" : ""}`}>
                 <Menu size={20} className="text-black shadow-[0_0_12px_rgba(124,58,237,0.9)] transition-all duration-300 hover:size-6 hover:shadow-[0_0_20px_rgba(124,58,237,0.9)]"/>
             </button>
 
