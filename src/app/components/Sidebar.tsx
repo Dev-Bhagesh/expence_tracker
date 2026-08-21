@@ -1,53 +1,66 @@
 "use client"
-import React from "react";
+import React, { useEffectEvent } from "react";
 // import finora_logo from './public/finora_logo.png';
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { X, Menu, LayoutDashboard, CircleHelp, Info, ArrowLeftRight, Wallet, PiggyBank, BarChart, Repeat, Settings, icons } from "lucide-react";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/navigation";
 
 const Sidebar = () => {
     const [isActive, setIsActive] = useState('Dashboard')
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-
+    const [clickedMenu , setclickedMenu] = useState('')
+    const router = useRouter()
     // Side bar navigation labels
     const navitems = [
         {
             label: "Dashboard",
+            path:"dashboard",
             icon: LayoutDashboard
         },
         {
             label: "Transaction",
+            path:"transaction",
             icon: ArrowLeftRight,
         },
         {
             label: "Income",
+            path:"income",
             icon: Wallet,
         },
         {
             label: "Budget",
+            path:"budget",
             icon: PiggyBank,
         },
         {
             label: "Analytics",
+            path:"analytics",
             icon: BarChart,
         },
         {
             label: "Recurring",
+            path:'recurring',
             icon: Repeat,
         },
         {
             label: "Settings",
+            path:'settings',
             icon: Settings,
         },
         {
             label: "About",
+            path:'about',
             icon: Info
         },
         {
             label: "Help",
+            path:'help',
             icon: CircleHelp,
         }
     ]
+
     return (
         <>
             <button onClick={() =>{console.log("the hamburger button is clicked"), setIsMenuOpen(true)}} className={` bg-[rgba(67,20,148,0.9)] cursor-pointer rounded p-0.5 fixed bottom-5 left-5 z-[999] md:hidden ${isMenuOpen ? "hidden" : ""}`}>
@@ -72,7 +85,7 @@ const Sidebar = () => {
                         const active = isActive === item.label;
                         return (
                             // <li key={index} onClick={()=>setIsActive(item.label)} className="flex items-center gap-1 py-2 px-3">
-                            <li key={index} onClick={() => {setIsActive(item.label);setIsMenuOpen(false)}} className={`text-xs flex items-center m-2 gap-1 py-2 px-3 font-nav cursor-pointer rounded-xl transition-all ease-out duration-200 ${active ? " text-white bg-[#8b5cf626] shadow-[inset_2px_0_0px_rgba(124,58,237,0.9),0_0_0px_rgba(124,58,237,1)]" : "text-[#7e889d] hover:text-white hover:bg-[#ffffff08]"}`}>
+                            <li key={index} onClick={() => {setIsActive(item.label);setIsMenuOpen(false);router.push(`/${item.path}`)}} className={`text-xs flex items-center m-2 gap-1 py-2 px-3 font-nav cursor-pointer rounded-xl transition-all ease-out duration-200 ${active ? " text-white bg-[#8b5cf626] shadow-[inset_2px_0_0px_rgba(124,58,237,0.9),0_0_0px_rgba(124,58,237,1)]" : "text-[#7e889d] hover:text-white hover:bg-[#ffffff08]"}`}>
                                 <Icon size={14} />
                                 <span>{item.label}</span>
                             </li>
