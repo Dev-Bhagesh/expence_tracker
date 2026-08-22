@@ -5,58 +5,59 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { X, Menu, LayoutDashboard, CircleHelp, Info, ArrowLeftRight, Wallet, PiggyBank, BarChart, Repeat, Settings, icons } from "lucide-react";
 import { redirect } from "next/dist/server/api-utils";
-import { useRouter } from "next/navigation";
+import { useRouter,usePathname } from "next/navigation";
 
 const Sidebar = () => {
     const [isActive, setIsActive] = useState('Dashboard')
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [clickedMenu , setclickedMenu] = useState('')
     const router = useRouter()
+    const pathname = usePathname()
     // Side bar navigation labels
     const navitems = [
         {
             label: "Dashboard",
-            path:"dashboard",
+            path:"/Dashboard",
             icon: LayoutDashboard
         },
         {
             label: "Transaction",
-            path:"transaction",
+            path:"/Transaction",
             icon: ArrowLeftRight,
         },
         {
             label: "Income",
-            path:"income",
+            path:"/income",
             icon: Wallet,
         },
         {
             label: "Budget",
-            path:"budget",
+            path:"/budget",
             icon: PiggyBank,
         },
         {
             label: "Analytics",
-            path:"analytics",
+            path:"/analytics",
             icon: BarChart,
         },
         {
             label: "Recurring",
-            path:'recurring',
+            path:'/recurring',
             icon: Repeat,
         },
         {
             label: "Settings",
-            path:'settings',
+            path:'/settings',
             icon: Settings,
         },
         {
             label: "About",
-            path:'about',
+            path:'/about',
             icon: Info
         },
         {
             label: "Help",
-            path:'help',
+            path:'/help',
             icon: CircleHelp,
         }
     ]
@@ -82,10 +83,10 @@ const Sidebar = () => {
                 <ul>
                     {navitems.map((item, index) => {
                         const Icon = item.icon;
-                        const active = isActive === item.label;
+                        const active = pathname === item.path
                         return (
                             // <li key={index} onClick={()=>setIsActive(item.label)} className="flex items-center gap-1 py-2 px-3">
-                            <li key={index} onClick={() => {setIsActive(item.label);setIsMenuOpen(false);router.push(`/${item.path}`)}} className={`text-xs flex items-center m-2 gap-1 py-2 px-3 font-nav cursor-pointer rounded-xl transition-all ease-out duration-200 ${active ? " text-white bg-[#8b5cf626] shadow-[inset_2px_0_0px_rgba(124,58,237,0.9),0_0_0px_rgba(124,58,237,1)]" : "text-[#7e889d] hover:text-white hover:bg-[#ffffff08]"}`}>
+                            <li key={index} onClick={() => {setIsActive(item.label);setIsMenuOpen(false);router.push(`${item.path}`)}} className={`text-xs flex items-center m-2 gap-1 py-2 px-3 font-nav cursor-pointer rounded-xl transition-all ease-out duration-200 ${active ? " text-white bg-[#8b5cf626] shadow-[inset_2px_0_0px_rgba(124,58,237,0.9),0_0_0px_rgba(124,58,237,1)]" : "text-[#7e889d] hover:text-white hover:bg-[#ffffff08]"}`}>
                                 <Icon size={14} />
                                 <span>{item.label}</span>
                             </li>
