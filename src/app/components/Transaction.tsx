@@ -9,9 +9,9 @@ const TransactionPartOne = () => {
                     <h1 className="font-bold text-3xl">Transactions</h1>
                     <p className="text-slate-400 text-[10px]">Track and manage all your income and expences</p>
                 </div>
-                <button className="text-[12px] bg-[#5F26E3] rounded-2xl px-3 py-2">
-                    <span className="hidden md:inline">+ Add Transaction</span>
-                    <span className="inline md:hidden">+AT</span>
+                <button className="text-[12px] bg-[#5F26E3] rounded-2xl px-3 py-2 hover:translate-y-[-2px] cursor-pointer duration-300 transition-all" >
+                    <span className="hidden md:inline ">+ Add Transaction</span>
+                    <span className="inline md:hidden ">+AT</span>
                 </button>
             </div>
             <TransactionBlock2/>
