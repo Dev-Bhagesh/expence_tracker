@@ -25,41 +25,41 @@ const Sidebar = () => {
             path:"/Transaction",
             icon: ArrowLeftRight,
         },
-        {
-            label: "Income",
-            path:"/income",
-            icon: Wallet,
-        },
+        // {
+        //     label: "Income",
+        //     path:"/income",
+        //     icon: Wallet,
+        // },
         {
             label: "Budget",
-            path:"/budget",
+            path:"/Budget",
             icon: PiggyBank,
         },
-        {
-            label: "Analytics",
-            path:"/analytics",
-            icon: BarChart,
-        },
+        // {
+        //     label: "Analytics",
+        //     path:"/analytics",
+        //     icon: BarChart,
+        // },
         {
             label: "Recurring",
-            path:'/recurring',
+            path:'/Recurring',
             icon: Repeat,
         },
-        {
-            label: "Settings",
-            path:'/settings',
-            icon: Settings,
-        },
-        {
-            label: "About",
-            path:'/about',
-            icon: Info
-        },
-        {
-            label: "Help",
-            path:'/help',
-            icon: CircleHelp,
-        }
+        // {
+        //     label: "Settings",
+        //     path:'/settings',
+        //     icon: Settings,
+        // },
+        // {
+        //     label: "About",
+        //     path:'/about',
+        //     icon: Info
+        // },
+        // {
+        //     label: "Help",
+        //     path:'/help',
+        //     icon: CircleHelp,
+        // }
     ]
 
     return (
