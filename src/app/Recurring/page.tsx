@@ -1,10 +1,11 @@
 import React from "react";
+import ReoccuringHeadText from "../components/ReoccuringHead";
 
 const Recurring=()=>{
     return(
-        <>
-            <h1>This is Recurring page </h1>
-        </>
+        <div className="p-2">
+            <ReoccuringHeadText/>
+        </div>
     )
 }
 export default Recurring
